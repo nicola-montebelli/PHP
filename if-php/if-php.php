@@ -159,9 +159,6 @@
                 echo "mancano " .$g ." giorni alla fine del mese";
                 echo "<br>";
         }  
-
-        //commit di ifts25
-        //sto provando a committare su git
      ?>
 </body>
 </html>
