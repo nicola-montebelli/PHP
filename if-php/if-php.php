@@ -138,7 +138,7 @@
         echo "<hr>";
 
         //quanti giorni mancano al fine mese di gennaio
-        $mese=date("n");   //mese corrente senza 0 iniziale
+        $mese=date("n");   //'n' mese corrente senza 0 iniziale
         switch($mese){
             case 1: $giornimese = 31; break;
             case 2: $giornimese = 28; break;  //controllare se l'anno è bisestile
