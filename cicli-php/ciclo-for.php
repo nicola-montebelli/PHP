@@ -128,7 +128,7 @@
     ?>
 
     <table border="1">
-    <?php   //stampare una tabellina pitagorica 10*10 PER CASA  aggiungere gli header con i numeri da moltiplicare
+    <?php   //9- stampare una tabellina pitagorica 10*10 PER CASA  aggiungere gli header con i numeri da moltiplicare
 
     $righe =10;
     $colonne = 10;
