@@ -124,12 +124,12 @@
             }
         }
         echo "<hr>";
-        //Esercizi da slide 7 - 8    
+        //Esercizi da slide 7 - 8 - 9  
     ?>
 
     <table border="1">
     <?php   //stampare una tabellina pitagorica 10*10 PER CASA  aggiungere gli header con i numeri da moltiplicare
-    
+
     $righe =10;
     $colonne = 10;
     $tabellina= 0;
