@@ -123,8 +123,7 @@
                 echo $i . " ";
             }
         }
-        echo "<hr>";
-        //Esercizi da slide 7 - 8 - 9  
+        echo "<hr>"; 
     ?>
 
     <table border="1">
@@ -133,16 +132,77 @@
     $righe =10;
     $colonne = 10;
     $tabellina= 0;
-
-    for($r=1; $r<=$righe;$r++){
-        echo "<tr>" ;
-        for($c=1; $c<=$colonne;$c++){       //tabella dinamica
-            $tabellina = $r * $c;
-            echo "<td> $tabellina </td>";
-        }      
-         echo "</tr>";
+    
+    for($r=0; $r<=$righe;$r++){
+        echo "<tr>";        //stampa le righe (11 perchè 0-10)
+        echo "<td style=\"background-color: lightgrey;\">".$r."</td>";     //crea la colonna 0 colorata di grigio
+        for($c=1; $c<=$colonne;$c++){   //il for interno lavora n volte per quante n volte lavora il for esterno [n(for-interno)*n(for-esterno)]
+            if($r==0)       
+                {
+                echo "<td style=\"background-color: orangered;\">".$c."</td>";  //stampa 10 table data di sfondo rosso quando r=0
+                }else
+                {   
+                    $tabellina = $r * $c;       //questo crea i valori del body
+                    echo "<td> $tabellina </td>";
+                }
+        }   
+        echo "</tr>";   
     }
     ?>
     </table>
+<hr>
+<p ></p>
+     <?php
+            //esercizio 7) elencare i numeri da 10 a 100
+            //7-a) scrivere se è pari o dispari
+            //7-b) elencare i primi 10 numeri dispari
+            echo "Elenco dei numeri da 10 a 100 <br>";
+            $count=0;
+            for($i=10;$i<=100;$i++)
+            {
+                if($i%2!=0)
+                {
+                    if($count<10)
+                    {
+                        echo "Dispari: $i <br>";
+                        $count++;
+                    }else continue;      
+                } 
+                else 
+                {
+                    echo "Pari: $i <br>";
+                }
+            }
+
+        echo "<hr>";
+         $conteggio=0;
+            for($i=10;$i<=100;$i++){    //7-b)
+                if($i%2!=0){
+                    $conteggio++;
+                    echo "Dispari: $i <br>";
+                }
+                if($conteggio==10){
+                    break;
+                }
+            }
+         ?>
+         <hr>
+         <?php 
+            //Esercizio 8: Elencare i multipli di 7 da 1 a 100
+            //8-a) Elencarne solo 7
+            $conto=0;
+            for($i=1;$i<=100;$i++)
+            {
+                if($i%7==0)
+                {
+                    echo "Multiplo di 7: $i <br>";
+                    $conto++;
+                }
+                if($conto==7)
+                {
+                    break;
+                }
+            }
+         ?>
 </body>
 </html>
