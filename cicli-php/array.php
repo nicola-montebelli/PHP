@@ -138,13 +138,13 @@
 
                 if($arraynumeri[$i]%2==0)
                     {
-                        echo "<strong>";
-                        echo "Indice " . $i . " (" . $arraynumeri[$i] . ") " . "- ";
+                        echo "<strong style=\"background-color: yellow;\">";
+                        echo "Indice " . $i . " (" . $arraynumeri[$i] . ") " . "- <br>";
                         echo "</strong>";
                     }else
                     {
-                        echo "<i>";
-                        echo "Indice " . $i . " [" . $arraynumeri[$i] . "] " ."- ";
+                        echo "<i style=\"background-color: red;\">>";               //pratica per la verifica
+                        echo "Indice " . $i . " [" . $arraynumeri[$i] . "] " ."- <br>";
                         echo "</i>";
                     }
             }
