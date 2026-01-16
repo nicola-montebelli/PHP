@@ -127,7 +127,7 @@
     ?>
 
     <table border="1">
-    <?php   //9- stampare una tabellina pitagorica 10*10 PER CASA  aggiungere gli header con i numeri da moltiplicare
+    <?php   echo "9- stampare una tabellina pitagorica 10*10 con tanto di bordi con i numeri da moltiplicare <br>";
 
     $righe =10;
     $colonne = 10;
@@ -153,9 +153,9 @@
 <hr>
 <p ></p>
      <?php
-            //esercizio 7) elencare i numeri da 10 a 100
-            //7-a) scrivere se è pari o dispari
-            //7-b) elencare i primi 10 numeri dispari
+            echo "esercizio 7) elencare i numeri da 10 a 100 <br>";
+            echo "7-a) scrivere se è pari o dispari <br>";
+           
             echo "Elenco dei numeri da 10 a 100 <br>";
             $count=0;
             for($i=10;$i<=100;$i++)
@@ -173,8 +173,8 @@
                     echo "Pari: $i <br>";
                 }
             }
-
         echo "<hr>";
+        echo "7-b) elencare i primi 10 numeri dispari <br>";
          $conteggio=0;
             for($i=10;$i<=100;$i++){    //7-b)
                 if($i%2!=0){
@@ -188,8 +188,8 @@
          ?>
          <hr>
          <?php 
-            //Esercizio 8: Elencare i multipli di 7 da 1 a 100
-            //8-a) Elencarne solo 7
+            echo "Esercizio 8: Elencare i multipli di 7 da 1 a 100 <br>";
+            echo "8-a) Elencarne solo 7 <br>";
             $conto=0;
             for($i=1;$i<=100;$i++)
             {
