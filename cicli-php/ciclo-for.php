@@ -143,7 +143,7 @@
                 }else
                 {   
                     $tabellina = $r * $c;       //questo crea i valori del body
-                    echo "<td> $tabellina </td>";
+                    echo "<td> $tabellina </td>";   //crea le table data 10 volte(for-interno) * 10 volte (for-esterno)
                 }
         }   
         echo "</tr>";   
