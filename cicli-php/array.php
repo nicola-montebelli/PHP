@@ -93,14 +93,15 @@
 
             //min e max dell'array $r
             echo "trovare il valore max e min dell'array<br>";
-            $min=+INF;
-            $max=-INF;
+            $min=50;
+            $max=1;
             foreach($r as $controllo)
                 {
                     if($controllo<$min)
                         {
                            $min = $controllo;
-                        }else if($controllo>$max)
+                        } 
+                        if($controllo>$max)
                         {
                            $max=$controllo;
                         }
