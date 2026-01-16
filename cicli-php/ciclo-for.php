@@ -204,5 +204,6 @@
                 }
             }
          ?>
+         <!-- esercizi fatti a casa e copiato ed aggiornato in quello di classe!-->
 </body>
 </html>
