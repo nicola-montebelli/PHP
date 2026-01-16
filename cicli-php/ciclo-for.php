@@ -126,12 +126,14 @@
         echo "<hr>"; 
     ?>
 
-    <table border="1">
+<table border="1">
     <?php   echo "9- stampare una tabellina pitagorica 10*10 con tanto di bordi con i numeri da moltiplicare <br>";
 
-    $righe =10;
-    $colonne = 10;
+    $righe =rand(1,100); 
+    $colonne = rand(1,100);
     $tabellina= 0;
+    echo "Numero righe: $righe <br>";
+    echo "Numero colonne: $colonne <br>";
     
     for($r=0; $r<=$righe;$r++){
         echo "<tr>";        //stampa le righe (11 perchè 0-10)
@@ -146,10 +148,10 @@
                     echo "<td> $tabellina </td>";   //crea le table data 10 volte(for-interno) * 10 volte (for-esterno)
                 }
         }   
-        echo "</tr>";   
+        echo "</tr>";
     }
     ?>
-    </table>
+</table>
 <hr>
 <p ></p>
      <?php
@@ -203,7 +205,7 @@
                     break;
                 }
             }
-         ?>
-         <!-- esercizi fatti a casa e copiato ed aggiornato in quello di classe!-->
+        ?>
+        
 </body>
 </html>
