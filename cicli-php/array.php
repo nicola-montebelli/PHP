@@ -187,6 +187,7 @@
             print_r($numeriGen);
             echo "<br>Il maggiore è ".$maggiore ."<br>";
             echo "Il minore è " .$minore ."<br>";
+
     ?>
 </body>
 </html>
