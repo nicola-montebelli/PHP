@@ -7,8 +7,12 @@
 </head>
 <body>
     <?php 
-        $na=20;
+        $na=5;
         $a=[];
+        $indiceNeonati=[];
+        $maggiorenni=[];
+        $indiceNome=[];
+        $nomi=['Mario','Giovanni','Pippo','Ermete','Flautoberto'];
                  //0. inizializzazione array di età
         for($i=0;$i<$na;$i++)
             {
@@ -19,8 +23,8 @@
         $neonato=0;
         $etaMassima=$a[0]; //oppure un operatore ternario $a? $a[0]:0;
         $sommaEta=0;
-        $media=0;
         $contaEta=0;
+        $numMax=0;
         for($i=0;$i<count($a);$i++)
             {
                 $sfondo=($i%2)? "#cccc00":"#00cccc";    //colore a righe alternate
@@ -36,34 +40,64 @@
                 //     }
                 
 
-                //2. contare quanti 0 appaiono nell'array
+                //2. contare quanti 0 (neonati) appaiono nell'array
+                //7. creare un array che contiene gli INDICI dei neonati
                 if($a[$i]==0)
                     {
                         $neonato++;
+                        $indiceNeonati[]=$i;
                     }
                 //2.b trovare l'età massima
                 if($a[$i]>$etaMassima)
                     {
                         $etaMassima=$a[$i];
+                        $numMax=0;
+                        $indiceNome=[];
+                    }
+                //5 contare quante volte compare il numero massimo 
+                if($a[$i]==$etaMassima)
+                    {
+                        $numMax++;
+                        $indiceNome[]=$i;
                     }
 
                 //3.calcolare l'età media dei maggiorenni  -> somma poi media (Somma/nElementi)
+                //6. creare un array che contenga SOLO maggiorenni
                 if($a[$i]>=18)
                     {
                         $sommaEta+=$a[$i];
                         $contaEta++;
+                        //aggiungere in fondo all'array $maggiorenni
+                        $maggiorenni[]=$a[$i];
                     }
                 
             }
             echo "<br> i neonati sono: $neonato<br>";
-            echo "Età massima: $etaMassima<br>";
-            if($contaEta==0)
+            echo "Età massima: $etaMassima<br>"; //". Lui è " . $nomi[$indiceNome].".<br>";
+
+            for($i=0;$i<count($indiceNome);$i++)        //stampare il nome dell'indice che corrisponde all'età massima 
                 {
-                    echo "Non ci sono maggiorenni<br>";
-                } else echo "Media delle età: ". ($sommaEta/$contaEta) ."<br>";
+                    echo $nomi[$indiceNome[$i]] ." ";
+                }
+
+
+            echo"<br>";
+                if($contaEta==0)    //stampare la media
+                    {
+                        echo "Non ci sono maggiorenni<br>";
+                    } else echo "Media delle età: ". ($sommaEta/$contaEta) ."<br>";
+
+                //4.calcolare la percentuale dei votanti (n-maggiorenni / totale *100)
+                echo "La percentuale dei votanti: " . (($contaEta/count($a))*100)."%<br>";
+            echo "Numero Età Massima $numMax <br>";
+
+            echo "<br> array di solo maggiorenni<br>";
+            print_r($maggiorenni);
+            echo"<br>";
+            echo"array dei neonati<br>";
+            print_r($indiceNeonati);
             
-            
-        
+
     ?>
 </body>
 </html>
