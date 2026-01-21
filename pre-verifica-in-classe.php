@@ -75,7 +75,7 @@
             echo "<br> i neonati sono: $neonato<br>";
             echo "Età massima: $etaMassima<br>"; //". Lui è " . $nomi[$indiceNome].".<br>";
 
-            for($i=0;$i<count($indiceNome);$i++)        //stampare il nome dell'indice che corrisponde all'età massima 
+            for($i=0;$i<count($indiceNome);$i++)        //stampare il nome che corrisponde all'indice dell'età massima 
                 {
                     echo $nomi[$indiceNome[$i]] ." ";
                 }
