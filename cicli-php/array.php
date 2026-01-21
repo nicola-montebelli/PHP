@@ -107,7 +107,103 @@
             }
             echo "somma totale: " .$somma;
 
-        //trovare il valore max e min dell'array $r
+         //min e max dell'array $r
+            echo "trovare il valore max e min dell'array<br>";
+            $min=50;
+            $max=1;
+            foreach($r as $controllo)
+                {
+                    if($controllo<$min)
+                        {
+                           $min = $controllo;
+                        } 
+                        if($controllo>$max)
+                        {
+                           $max=$controllo;
+                        }
+                }
+                echo "Valore minimo: " . $min ."<br>";
+                echo "Valore massimo: " .$max . "<br>";
+
+            echo "<hr>";
+    ?>
+
+    <?php 
+        //stampare solo i valori pari di un array
+        $array=[];
+        $solopari=[];
+        echo "Esercizio: stampare solo i valori pari di un array<br>";
+        for($i=0;$i<10;$i++)
+        {
+            $array[$i]=$i;
+            if($array[$i]%2==0){
+               $solopari[$i]=$i;
+            }
+        }
+        print_r($solopari); 
+        echo "<hr>"; 
+    ?>
+
+    <?php 
+        //stampare in grassetto i numeri pari e in corsivo i dispari
+        echo"Stampare in grassetto i numeri pari e in corsivo i dispari<br>";
+        $arraynumeri=[];
+        $lunghezzaArray= rand(5,20);
+        for($i=0;$i<$lunghezzaArray;$i++)
+            {
+                $arraynumeri[]=rand(1,30);       //creiamo i valori da mettere dentro un array di lunghezza random (5,20)
+
+                if($arraynumeri[$i]%2==0)
+                    {
+                        echo "<strong style=\"background-color: yellow;\">";
+                        echo "Indice " . $i . " (" . $arraynumeri[$i] . ") " . "- <br>";
+                        echo "</strong>";
+                    }else
+                    {
+                        echo "<i style=\"background-color: red;\">>";               //pratica per la verifica
+                        echo "Indice " . $i . " [" . $arraynumeri[$i] . "] " ."- <br>";
+                        echo "</i>";
+                    }
+            }
+            echo"<hr>";
+    ?>  <!-- copiato la progressione sul vs di classe -->
+
+    <?php 
+            echo"trovare il valore max e min dell'array dopo averlo inizializzato con 10 interi consecutivi(random)<br>";
+            $numeriGen=[];
+            //$maggiore=0;
+            //$minore=null;
+            echo "Ora gli diamo dei valori<br>";
+            for($i=0;$i<10;$i++)
+                {
+                    $numeriGen[]=rand(0,100);       //generazione di un array con valori random
+                    if($numeriGen)                  //controllo SE l'array ha almeno un valore(true)
+                        {
+                            $maggiore=$numeriGen[0];       
+                            $minore = $numeriGen[0];    //assegno a $maggiore e $minore il valore dell'indice 0 
+                        }else 
+                        {
+                            echo "L'array è vuoto<br>";
+                        }
+                }
+            for($i=0;$i<count($numeriGen);$i++)
+                {
+                    if($numeriGen[$i]>$maggiore)
+                        {
+                            $maggiore= $numeriGen[$i];      //ricerca del valore maggiore nell'array
+                        }
+                }
+            $minore=$numeriGen[0];  //soluzione della classe
+            for($i=0;$i<count($numeriGen);$i++)
+                {
+                   if($numeriGen[$i]<$minore)
+                        {
+                            $minore=$numeriGen[$i];     //ricerca del valore minore nell'array
+                        }
+                }
+            print_r($numeriGen);
+            echo "<br>Il maggiore è ".$maggiore ."<br>";
+            echo "Il minore è " .$minore ."<br>";
     ?>
 </body>
 </html>
