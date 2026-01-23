@@ -25,10 +25,13 @@
         $sommaEta=0;
         $contaEta=0;
         $numMax=0;
+        $min=111;
+        $minVolte=0;
+
         for($i=0;$i<count($a);$i++)
             {
                 $sfondo=($i%2)? "#cccc00":"#00cccc";    //colore a righe alternate
-                $tag=($a[$i]>=18)?"b":"i";              
+                $tag=($a[$i]>=18)?"b":"i";                  //bold se elemento i-esimo di $a è maggiore di 18 altrimenti italic
                 echo"<div style='background:$sfondo'><$tag>". $a[$i]."</$tag></div>";
                 // if($a[$i]>=18)
                 //     {
@@ -59,6 +62,15 @@
                     {
                         $numMax++;
                         $indiceNome[]=$i;
+                    }
+                if($a[$i]<$min)
+                    {
+                        $min=$a[$i];
+                        $minVolte=0;
+                    }
+                if($a[$i]==$min)
+                    {
+                        $minVolte++;
                     }
 
                 //3.calcolare l'età media dei maggiorenni  -> somma poi media (Somma/nElementi)
@@ -96,6 +108,7 @@
             echo"<br>";
             echo"array dei neonati<br>";
             print_r($indiceNeonati);
+            echo"<br> Età minima apparsa nell'array: $min" ." E' apparsa $minVolte";
             
 
     ?>
