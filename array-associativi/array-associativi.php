@@ -80,7 +80,7 @@
         
         //esempio con chiave associativa
 
-        $voti =['Mario' => 10,'Giovanni' => 5, 'Pippo' => 7,'Bauden' => 8];
+        $voti =['Mario' => 10,'Giovanni' => 5, 'Pippo' => 7,'Bauden' => 8,'Merkel'=> 8];
         //$voti[]=6; //aggiungere un valore dal fondo senza chiave risulterà con quel valore che avrà indice 0 perchè è il primo libero
         $voti['Giulia']=6;
         $voti['Mario']=6; //aggiungere un valore a una chiave già esistente va a sostituire il valore precedente
@@ -94,7 +94,7 @@
             if($i%3==0)
                 {
                     echo"<tr>";
-                    echo "<td><b>Nome</b></td>";
+                    echo "<td><b>Nome</b></td>";    //intestazione ogni 3 iterazioni
                     echo "<td><b>Voto</b></td>";
                     echo"</tr>";  
                 }
@@ -110,9 +110,32 @@
         echo "</table>";
         $media=count($voti) >0?($somma/count($voti)) : "Nessun voto disponibile";
         echo"<br> Media = ".$media."<br>";
+        echo "<hr>";
+
 
         //per casa calcolare il voto più alto e chi l'ha preso
         //scrivere il nome di chi ha un voto più alto della media
+
+
+        $nMax=max($voti);   //max() trova il valore massimo, in questo caso in un array senza restituire la chiave
+        $nomeMax=array_search($nMax,$voti); //array_search() trova a che chiave è associato il valore in ingresso
+        echo "Il voto più alto è: $nMax<br> ed è stato assegnato a $nomeMax (trovato tramite funzioni)<br>";  //di per sè funziona ma il problema è che trova solo il primo valore massimo
+                                                                                    //e la prima chiave del valore massimo
+        echo "<br>";   
+        echo "(trovato tramite ciclo):<br>";                                                                   
+        foreach($voti as $studente => $mark)
+            {
+                if($mark>$nMax || $mark==$nMax)
+                    {
+                        echo "$studente - ";
+                        echo "$mark <br>";
+                    }
+                if($mark>$media)
+                    {
+                        echo"$studente è sopra la media<br>";
+                    }
+            }
+
     ?>
 </body>
 </html>
