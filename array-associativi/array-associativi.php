@@ -111,8 +111,8 @@
         $media=count($voti) >0?($somma/count($voti)) : "Nessun voto disponibile";
         echo"<br> Media = ".$media."<br>";
 
-        //scrivere il nome di chi ha un voto più alto della media
         //per casa calcolare il voto più alto e chi l'ha preso
+        //scrivere il nome di chi ha un voto più alto della media
     ?>
 </body>
 </html>

@@ -19,7 +19,7 @@
         // var_dump($persona1); //stampa le informazioni della variabile
         // echo "</pre>";
 
-        //elencare i nomi delle persone (sapendo che tutti gli elementi di persone contengono la chiave 'nome')
+        //elencare i nomi e cognomi delle persone (sapendo che tutti gli elementi di persone contengono la chiave 'nome')
         foreach($persone as $persona){
                 // print_r($persona);
                 // echo "<br>";
@@ -27,7 +27,7 @@
         }
         echo "<hr>";
 
-        echo "<table class='table table-striped table-hover'>";
+        echo "<table class='table table-striped table-hover'>";     //esempio di come incorporare due classi in un singolo elemento
         //per ogni elemento dell'array $persone[0] scrivere la chiave
         if($persone){
              foreach($persone[0] as $chiave => $valore){        //ci serve stampare le chiavi 'nome', 'cognome', 'nato il, 'altezza' e le andiamo a prendere
@@ -51,6 +51,8 @@
         //altezza della persona con indice 2
         echo "<br> Altezza della persona con indice 2 <br>";
         echo $persone[2]['altezza'];
+        echo "<hr>";
+        
     ?>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
