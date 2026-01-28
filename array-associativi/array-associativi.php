@@ -59,7 +59,7 @@
             //inizializzo un array delle temperature con n.giorni del mese corrente con valori random tra -10 e 35
             //elencare i giorni con temperature sotto lo 0 
 
-        $giorniMese =31; //calcolare con switch i giorniMese
+        $giorniMese =31;
         $i=1;
         $temp=[];
         while($i<=$giorniMese)
@@ -76,6 +76,43 @@
                         echo "$giorno/".date("m/Y").": $value <br>";
                     }
             }
+        echo "<hr>";
+        
+        //esempio con chiave associativa
+
+        $voti =['Mario' => 10,'Giovanni' => 5, 'Pippo' => 7,'Bauden' => 8];
+        //$voti[]=6; //aggiungere un valore dal fondo senza chiave risulterà con quel valore che avrà indice 0 perchè è il primo libero
+        $voti['Giulia']=6;
+        $voti['Mario']=6; //aggiungere un valore a una chiave già esistente va a sostituire il valore precedente
+        print_r($voti);
+
+        echo "<table>";
+        $i=0;
+        $somma=0;
+        foreach($voti as $nome=> $voto){  //solitamente si usa fare $plurale as $singolare
+
+            if($i%3==0)
+                {
+                    echo"<tr>";
+                    echo "<td><b>Nome</b></td>";
+                    echo "<td><b>Voto</b></td>";
+                    echo"</tr>";  
+                }
+            echo"<tr>";
+            echo "<td>$nome -</td>";
+            echo "<td>($voto)</td>";
+            echo"</tr>";
+
+            //media dei voti
+            $somma+= $voto;
+            $i++;
+        }
+        echo "</table>";
+        $media=count($voti) >0?($somma/count($voti)) : "Nessun voto disponibile";
+        echo"<br> Media = ".$media."<br>";
+
+        //scrivere il nome di chi ha un voto più alto della media
+        //per casa calcolare il voto più alto e chi l'ha preso
     ?>
 </body>
 </html>
