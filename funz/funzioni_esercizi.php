@@ -38,4 +38,35 @@ function aggiungi_elemento($a,$k,$v)        //8a)
     $a[$k]= $v;
     return $a;
 }
+
+function max_valore_array($a)
+{
+    $valore_massimo=0;
+    foreach($a as $chiave => $valore)
+        {
+            if($valore_massimo < $valore){
+                $valore_massimo = $valore;
+            }else continue;
+            if($valore_massimo == max($a))
+                {
+                    return "$chiave vale $valore_massimo";
+                }
+        }  
+}
+
+function min_valore_array($a)
+{
+    $valore_minimo= +INF;
+    foreach($a as $chiave => $valore)
+        {
+            if($valore < $valore_minimo)
+                {
+                    $valore_minimo = $valore;
+                }else continue;
+            if($valore_minimo == min($a))
+                {
+                    return "$chiave vale $valore_minimo";
+                }
+        }
+}
 ?>
