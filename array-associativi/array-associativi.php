@@ -108,9 +108,16 @@
             $i++;
         }
         echo "</table>";
-        $media=count($voti) >0?($somma/count($voti)) : "Nessun voto disponibile";
-        echo"<br> Media = ".number_format($media,2, ",", ".")."<br>";       //funzione che formatta i numeri 
-        echo"<br> Media = ".$media."<br>";
+        $media=count($voti) >0?($somma/count($voti)) : 0;
+        if($media==0)
+            {
+                echo "Non è possibile calcolare la media";
+            }
+        else
+            {
+                echo"<br> Media = ".number_format($media,2, ",", ".")."<br>";       //funzione che formatta i numeri
+            }
+         
         echo "<hr>";
 
 
