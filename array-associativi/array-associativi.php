@@ -135,12 +135,11 @@
             {
                 if($mark>$nMax || $mark==$nMax)
                     {
-                        echo "$studente - ";
-                        echo "$mark <br>";
+                        echo "$studente ha il voto più alto $mark <br>";
                     }
                 if($mark>$media)
                     {
-                        echo"$studente è sopra la media<br>";
+                        echo"$studente  è sopra la media con voto $mark<br>";
                     }
             }
 
