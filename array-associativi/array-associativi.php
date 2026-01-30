@@ -109,7 +109,7 @@
         }
         echo "</table>";
         $media=count($voti) >0?($somma/count($voti)) : "Nessun voto disponibile";
-        echo"<br> Media = ".$media."<br>";
+        echo"<br> Media = ".number_format($media,2, ",", ".")."<br>";       //funzione che formatta i numeri 
 
         //per casa calcolare il voto più alto e chi l'ha preso
         //scrivere il nome di chi ha un voto più alto della media

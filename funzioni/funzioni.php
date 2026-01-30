@@ -36,6 +36,7 @@
             $anno = $a[0];
             $mese = $a[1];
             $giorno = $a[2];
+            print_r($a);
 
     
     ?>
