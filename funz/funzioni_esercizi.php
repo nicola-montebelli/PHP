@@ -69,4 +69,34 @@ function min_valore_array($a)
                 }
         }
 }
+        //funzione per esercizio 3
+function media_in_array(array $a,string $k)
+{
+    if(count($a)== 0)
+        {
+            return "Non ci sono valori da calcolare";
+        }
+    $somma_tot=0;
+    foreach($a as $dato)
+        {
+            if(is_numeric($dato[$k]))
+                {
+                    $somma_tot += $dato[$k];
+                }else return "Non è possibile calcolare la media di '$k'";
+        }
+        return "La media è: " . $somma_tot/count($a);
+}
+
+function aggiungi_elemento_multi($a,$k,$v,$k2,$v2,$k3,$v3,$k4)  //esercizio 3 consegna 8
+{
+    $a[count($a)]=
+    [
+        $k => $v,
+        $k2 => $v2,
+        $k3 => $v3,
+        $k4 => date("Y-m-d")
+    ];
+    
+    return $a;
+}
 ?>
