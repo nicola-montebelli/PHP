@@ -59,9 +59,9 @@ function min_valore_array($a)
     $valore_minimo= +INF;
     foreach($a as $chiave => $valore)
         {
-            if($valore < $valore_minimo)
-                {
-                    $valore_minimo = $valore;
+            if($valore < $valore_minimo)        
+                {                               
+                    $valore_minimo = $valore;   
                 }else continue;
             if($valore_minimo == min($a))
                 {
@@ -69,7 +69,7 @@ function min_valore_array($a)
                 }
         }
 }
-        //funzione per esercizio 3
+        //5-6-7)- Definire una funzione che calcola la media dei valori di una chiave in ingresso
 function media_in_array(array $a,string $k)
 {
     if(count($a)== 0)
@@ -87,16 +87,9 @@ function media_in_array(array $a,string $k)
         return "La media è: " . $somma_tot/count($a);
 }
 
-function aggiungi_elemento_multi($a,$k,$v,$k2,$v2,$k3,$v3,$k4)  //esercizio 3 consegna 8
+function aggiungi_elemento_multi($a,$k,$v,$k2,$v2,$k3,$v3,$k4)  //8)- Aggiungere un array in fondo all'array tramite funzione
 {
-    $a[count($a)]=
-    [
-        $k => $v,
-        $k2 => $v2,
-        $k3 => $v3,
-        $k4 => date("Y-m-d")
-    ];
-    
+    $a[count($a)]=[$k => $v, $k2 => $v2, $k3 => $v3, $k4 => date("Y-m-d")];
     return $a;
 }
 ?>

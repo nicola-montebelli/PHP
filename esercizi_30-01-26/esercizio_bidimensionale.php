@@ -72,7 +72,7 @@
     echo "<hr>";
 
 
-        //8)- Aggiungere un array in fondo all'array
+        //8)- Aggiungere un array in fondo all'array tramite funzione
         $prodotti = aggiungi_elemento_multi($prodotti,'nome',"prod4",'prezzo',8,'qta',25,'ultimo_acquisto');
         print_r($prodotti);
     echo "<hr>";
@@ -80,7 +80,6 @@
 
         //9)- aggiornare la data 'ultimo_acquisto' del 'prod2' al mese scorso e la 'qta' a 20
         $prodotti[1]['qta'] = 20;
-        //$prodotti[1]['ultimo_acquisto'] = "2023-12-12";
         print_r($prodotti);
         echo "<br>";
 
