@@ -20,7 +20,7 @@
             {
                 foreach($prodotti[0] as $chiave => $valore)
                     {
-                        echo "<td><b>$chiave</b></td>";
+                        echo "<td><b>$chiave</b></td>";         //stampa delle intestazioni
                     }
             }else echo "Non esistono valori da considerare<br>";
         foreach($prodotti as $prodotto)
@@ -28,7 +28,7 @@
                 echo "<tr>";
                 foreach($prodotto as $dato)
                     {
-                        echo "<td>$dato</td>";
+                        echo "<td>$dato</td>";          //stampa della tabella
                     }
                 echo "</tr>";
             }
