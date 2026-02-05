@@ -106,7 +106,7 @@
        echo "<ol>";
        foreach($minore_nomi as $nome)
         {
-            echo "<li>".$nome." in data " .$minore;
+            echo "<li>".$nome." in data " .$minore; //stampo sia i nomi e le corrispettive date (che son le stesse)
         }
         echo "</ol>";
         echo "<hr>";
