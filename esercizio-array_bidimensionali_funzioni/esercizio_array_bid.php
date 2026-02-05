@@ -9,7 +9,9 @@
     <?php 
     include_once("../funz/lib.php");
 
-    //12
+    //12 media_in_array($array,$chiave) che dato un array bidimensionale
+    // (tipo quello dato sopra) e il nome di una chiave (es. prezzo) considera il valore della
+    // chiave di ogni elemento dell’array e ne calcola la media
     function media_in_array($array,$key){
 
         if(empty($array))
@@ -35,7 +37,7 @@
                      ['nome'=>'prod3', 'prezzo'=>20, 'qta'=>0, 'ultimo_acquisto'=>'2020-12-28'] ];
 
 
-        //16
+        //16 aggiornare la data di ultimo acquisto del prod2 al mese scorso e la qta a 20;
         foreach($prodotti as $key => $prodotto)
         {
             if($prodotto['nome'] == 'prod2')
@@ -50,7 +52,8 @@
            $minore_nomi=[];
 
 
-        //1
+        //1 elencare in una tabella i dati di tutti i prodotti
+        $array_test=[];
         echo "<table border =1>";
         echo"<tr><th>Nome</th>";
         echo"<th>Prezzo</th>";
@@ -86,7 +89,8 @@
         echo"</table>";
         echo "<hr>";
 
-        //9
+
+        //9 elencare tutti i prodotti con qta nulla
         echo "Elenco dei prodotti con quantità nulla<ol>";
         foreach($prodotti as $prodotto)
             {
@@ -111,15 +115,16 @@
         echo "</ol>";
         echo "<hr>";
 
-        //13
+        //13 calcolare la media dei prezzi dei prodotti (usando la funzione sopra)
         echo "Media dei prezzi: " .number_format(media_in_array($prodotti,'prezzo'),2,",",".") ." €";
         echo "<br>";
-        //14
+        //14 calcolare la media della qta dei prodotti (usando la funzione sopra)
         echo "Media delle quantità: " .number_format(media_in_array($prodotti,'qta'),0);
         echo "<br>";
         echo "<hr>";
 
-        //15 
+        //15 aggiungere un nuovo prodotto in fondo all’array ($prodotti[] = $new_prod) di nome
+        //prod4, prezzo 8, qta 25 e ultimo acquisto la data di oggi;
         $prodotto_nuovo;
         $prodotto_nuovo =  ['nome'=>'prod4', 'prezzo'=>150, 'qta'=>9, 'ultimo_acquisto'=>data_db2utente(date("Y-m-d",strtotime('-1 day')))];
         $prodotti[] = $prodotto_nuovo;
