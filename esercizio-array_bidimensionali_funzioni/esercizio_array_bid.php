@@ -48,6 +48,8 @@
          $minore = date("Y-m-d",strtotime('+1 day')); //maggiore data possibile (domani)
          //$minore_nome= "nessun prodotto trovato";
            $minore_nomi=[];
+
+
         //1
         echo "<table border =1>";
         echo"<tr><th>Nome</th>";
@@ -56,12 +58,6 @@
         echo"<th>Ultimo Acquisto</th></tr>";
         foreach($prodotti as $prodotto)
             {
-                // echo "<tr>
-                // <td>{$prodotto['nome']}</td>             metodo statico
-                // <td>{$prodotto['prezzo']}</td>
-                // <td>{$prodotto['qta']}</td>
-                // <td>{$prodotto['ultimo_acquisto']}</td> 
-                // </tr>";
                 echo "<tr>";
                 foreach($prodotto as $k => $v)
                     {
@@ -73,7 +69,7 @@
                     }
                 echo "</tr>";
 
-                //10
+    //10 scrivere il nome del prodotto acquistato meno di recente (cioè con ‘ultimo_acquisto’ minore) e la relativa data di ultimo acquisto
                 if($prodotto['ultimo_acquisto']<$minore)
                 {
                     $minore = $prodotto['ultimo_acquisto'];
@@ -81,7 +77,7 @@
                     $minore_nomi=[];
                 }
 
-                //11
+                //11 per il punto precedente verificare se ci sono più prodotti e scriverli tutti
                 if($prodotto['ultimo_acquisto'] == $minore)
                 {
                     $minore_nomi[]=$prodotto['nome'];
@@ -105,11 +101,12 @@
         //10
        echo "$minore_nome ha data $minore. E' il meno recente.<br>";
 
+    //11
        echo"Lista di prodotti acquistati meno di recente:";
        echo "<ol>";
        foreach($minore_nomi as $nome)
         {
-            echo "<li>".$nome;
+            echo "<li>".$nome." in data " .$minore;
         }
         echo "</ol>";
         echo "<hr>";
