@@ -125,8 +125,6 @@
         $prodotti[] = $prodotto_nuovo;
         print_r($prodotti);
         echo "<hr>";
-
-        
     ?>
 </body>
 </html>
