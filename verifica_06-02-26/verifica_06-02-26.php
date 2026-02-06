@@ -68,7 +68,7 @@ include_once("file_funzioni.php");
 
     //4 Aggiungere il progetto PHP iniziato oggi con durata 1 anno e partecipanti in numero casuale tra 10 e 30
     $partecipanti_rnd = rand(10,30);
-    $progetti[]= ['nome'=>'PHP','inizio'=>date("Y"),'durata'=>1,'partecipanti'=>$partecipanti_rnd];
+    $progetti[]= ['nome'=>'PHP','inizio'=>(date("Y")+1),'durata'=>1,'partecipanti'=>$partecipanti_rnd];
     print_r($progetti);
     echo "<hr>";
 
@@ -93,7 +93,8 @@ include_once("file_funzioni.php");
     echo "<hr>";
 
     //7 in classe
-    echo "n. progetti attivi nell'anno scorso ". (date("Y")+1)." : ".attivi($progetti,(date("Y")+1)); //forse non va ritorna sempre 3 anche se i valori non tornano
+    echo "n. progetti attivi nell'anno ". (date("Y")-4)." : ".attivi($progetti,(date("Y")-4)); //cambiando i valori 'inizio' con date oltre il 2026 funziona perchè ne conta 0
+                                                                                        //ma ci sono dei dubbi per quando i valori 'inizio' sono sotto il 2026 (come era l'array di base)
 
     //controllare il file che carica la prof su classroom
 

@@ -21,9 +21,9 @@ function attivo($progetto,$anno = null) //cambiato per la consegna 7 -  $anno = 
     //anno compreso tra inizio e inizio + durata
     //inizio <= anno <= inizio+durata($fine)
 
-    $inizio = $progetto['inizio'];                  //data dell'array in ingresso
-    //$anno = date("Y");                            //cambiato per la consegna 7
-    $fine = $inizio + $progetto['durata'];
+    $inizio = $progetto['inizio'];                          //data 'inizio' dell'array in ingresso
+    //$anno = date("Y"); //cambiato per la consegna 7
+    $fine = $inizio + $progetto['durata'];                  //la sommo alla 'durata' in una variabile $fine
     if($inizio <= $anno && $anno<=$fine)
         {
             return true;
