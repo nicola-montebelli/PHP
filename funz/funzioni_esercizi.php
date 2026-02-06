@@ -47,7 +47,7 @@ function max_valore_array($a)
             if($valore_massimo < $valore){
                 $valore_massimo = $valore;
             }else continue;
-            if($valore_massimo == max($a))
+            if($valore_massimo == max($a))  
                 {
                     return "$chiave vale $valore_massimo";
                 }
