@@ -20,7 +20,6 @@ function attivo($progetto,$anno = null) //cambiato per la consegna 7 -  $anno = 
         }
     //anno compreso tra inizio e inizio + durata
     //inizio <= anno <= inizio+durata($fine)
-
     $inizio = $progetto['inizio'];                          //data 'inizio' dell'array in ingresso
     //$anno = date("Y"); //cambiato per la consegna 7
     $fine = $inizio + $progetto['durata'];                  //la sommo alla 'durata' in una variabile $fine
@@ -37,7 +36,7 @@ function attivi($array,$anno = null)
     $attivi=0;
     foreach($array as $a)
         {
-            if(attivo($a))      //oppure  senza funzione già definita = if($a['inizio']<=date("Y") && date("Y") <= ($a['inizio'] + $a['durata']))
+            if(attivo($a,$anno))      //oppure  senza funzione già definita = if($a['inizio']<=date("Y") && date("Y") <= ($a['inizio'] + $a['durata']))
                 {
                     $attivi++;
                 }
