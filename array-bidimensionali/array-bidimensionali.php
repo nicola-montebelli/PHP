@@ -45,7 +45,7 @@
         echo "</table>";
         echo "<hr>";
 
-        echo "Stampo la chiave 'nome' di indice \$persona con indice 0";
+        echo "Stampo la chiave 'nome' di \$persona con indice 0";
         echo "<br>" .$persone[0]['nome']."</b>";
 
         //altezza della persona con indice 2
