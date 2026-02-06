@@ -93,7 +93,7 @@ include_once("file_funzioni.php");
     echo "<hr>";
 
     //7 in classe
-    echo "n. progetti attivi nell'anno scorso ". (date("Y")-1)." : ".attivi($progetti,(date("Y")-1)); //forse non va 
+    echo "n. progetti attivi nell'anno scorso ". (date("Y")+1)." : ".attivi($progetti,(date("Y")+1)); //forse non va ritorna sempre 3 anche se i valori non tornano
 
     //controllare il file che carica la prof su classroom
 
