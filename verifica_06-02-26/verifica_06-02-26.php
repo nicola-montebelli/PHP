@@ -104,7 +104,7 @@ include_once("file_funzioni.php");
     $anno = 0;
     $j = 0;
     for ($i = $anno_min; $i <= date("Y"); $i++) {       //i=2020,          //i=2021                     //i=2022                //i=2023                //i=2024            //i=2025                //i=2026
-        $anno = $i;//$anno_min + $j;                    //anno=2020+0(j),  //anno=2020+1(j)             //anno=2020+2           //anno=2020+3           //anno=2020+4       //anno=2020+5           //anno=2020+6
+        $anno = $i; //$anno_min + $j;                    //anno=2020+0(j),  //anno=2020+1(j)             //anno=2020+2           //anno=2020+3           //anno=2020+4       //anno=2020+5           //anno=2020+6
         //$j++;                                         //j=1              //j=2                        //j=3                   //j=4                   //j=5               //j=6                   //j=7
         $attivi = attivi($progetti, $anno);    //corsi attivi nel 2020 = 1 //attivi nel 2021 = 2        //attivi nel 2022=2     //attivi=3              //attivi=4          //attivi=2              //attivi=3
         if ($attivi > $max) {                   //1(attivi) > 0(max)       //2>1(max)                   //2>2                   //3>2                   //4>3               //2>4                   //3>4
