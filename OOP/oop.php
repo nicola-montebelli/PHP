@@ -4,6 +4,7 @@
     {
         //proprietà = variabile
         public $saluto = "Buonasera";
+
         //di default la visibilità di un metodo è public
         function scriviCiao($saluto = null)   
         {
@@ -22,13 +23,11 @@
 
         private function giornoSera()
         {
-            $saluto = date("H")<17?"Buongiorno":"Buonsera"; 
+            $saluto = date("H")<17?"Buongiorno":"Buonasera"; 
             return $saluto;
         }
     }
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,7 +45,7 @@
         echo "valore di saluto (proprietà) dell'istanza \$f: ". $f->saluto;
         echo "<hr>";
 
-        $e -> scriviCiao(); //$e->saluto Pippo           //referenza (->) del metodo in una classe.  L'oggetto istanziato può solo richiamare metodi e proprietà pubbliche
+        $e -> scriviCiao("AO"); //$e->saluto Pippo           //referenza (->) del metodo in una classe.  L'oggetto istanziato può solo richiamare metodi e proprietà pubbliche
         $f -> scriviCiao(); //$f->saluto Buonasera
 
         //echo $e non si può fare
