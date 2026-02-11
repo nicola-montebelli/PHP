@@ -17,15 +17,16 @@
                             echo " Array => ".$chiave;
                             $i++;
                         }
-                    if(is_array($valore))
-                        {
-                            
-                            my_printr($valore);
-                        }
-                    else
+                    if(is_array($valore))       //metodo prof: if (is_array(($array)))
+                                                //echo "Array ("
+                        {                       //foreach()
+                                                //echo "$chiave =>"
+                            my_printr($valore); //richiamo la funzione passando $valore (my_printr($valore)) per controllare se $valore è un altro array
+                        }                       //echo " )" fuori dal foreach
+                    else                        //else echo $array(?) non dovrebbe essere $valore?
                         {
                             echo " [".$chiave."] => ";
-                            echo " (".$valore.") ";
+                            echo " (".$valore.") ";     //sarebbe  meglio richiamare la funzione passando $valore per vedere se 
                         }
                 }
         }
