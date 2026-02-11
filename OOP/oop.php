@@ -1,4 +1,10 @@
 <?php 
+
+//definire una costante
+define('ENAIP',"Centro di formazione S.Zavatta"); 
+echo ENAIP;         //le costanti sono SUPERGLOBALI ovvero il suo dato è visibile ovunque anche dentro le classi e le funzionis
+echo "<hr>";
+
 //definizione della classe
     class Esempio
     {
@@ -6,6 +12,8 @@
         public $saluto = "Buonasera";
         public $nome;
         static public $testo ="proprietà statica";   //tutte le istanze usano la stessa proprietà STATICA
+        const E =1; //dentro una classe le costanti si definiscono con const.La costante è SUPERGLOBALE dentro la classe
+        //dall'esterno si può richiamare con ::
 
         //PER CASA creare un contatore di oggetti istanziati,cioè una proprietà statica incrementata ad ogni chiamata del costruttore
 
