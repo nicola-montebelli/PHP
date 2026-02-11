@@ -49,8 +49,8 @@
 // foreach($prodotti as $key => $array)
 //     {
 //         echo "[Array ".$key."]"." => ";
-//         foreach($array as $chiave => $valore)
-//             {
+//         foreach($array as $chiave => $valore)        //printr fatto dall'utente 
+//             {                                        //per un array bidimensionale
 //                 echo "(" .$chiave;
 //                 echo " => ";            
 //                 echo $valore .") ";
