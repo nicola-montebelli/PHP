@@ -9,7 +9,7 @@
     <?php 
         function my_printr($array)
         {
-            $i=0;
+            $i=0;           //la keyword GLOBAL rende le variabili visibili anche dall'esterno alla funzione
             foreach($array as $chiave => $valore)
                 {
                     if($chiave == $i)
@@ -17,7 +17,6 @@
                             echo " Array => ".$chiave;
                             $i++;
                         }
-                    
                     if(is_array($valore))
                         {
                             
