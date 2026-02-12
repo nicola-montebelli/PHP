@@ -11,7 +11,7 @@ class Corso
     function __construct($titolo,$anno)
     {
         $this->titolo = $titolo;
-        $this->$anno = $anno;
+        $this->anno = $anno;
     }
 
     function stampaDati()
@@ -29,6 +29,11 @@ class Corso
     function nStudenti()
     {
         return count($this->studenti);
+    }
+    
+    function media()
+    {
+
     }
 }
 
