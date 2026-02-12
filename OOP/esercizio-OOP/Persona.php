@@ -8,16 +8,17 @@ class Persona
     private $voti;
 
     //metodi della classe Persona
-    function __construct($nome,$cognome,$ruolo = "")
+    function __construct($nome,$cognome,$ruolo = " ")
     {
         $this->setNome($nome);
         $this->setCognome($cognome);
         $this->setRuolo($ruolo);
          if($this->ruolo == "studente")
             {
-                $voti = [9,6,5,10];
+                $this->voti = [rand(1,10),rand(1,10),rand(1,10),rand(1,10)];        //si poteva fare anche un for
             }
     }
+    
 //funzione per stampare i dati di uno studente/docente da richiamare in index.php
     function elencoDati()
     {
@@ -45,6 +46,11 @@ class Persona
         $this->cognome =ucfirst($cognome);
     }
 
+    function getVoti()
+    {
+        return $this->voti;
+    }
+
 //ruolo
     function setRuolo($ruolo)
     {
@@ -57,16 +63,6 @@ class Persona
         return $this->ruolo;
     }
 
-    //funzione della media
-     function media()
-    {
-        $sommaTot=0;
-        foreach($this->voti as $voto)
-            {
-                $sommTot += $voto;
-            }
-            $media = $sommaTot/count($this->voti);
-    }
 }
 
 

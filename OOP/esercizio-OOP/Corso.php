@@ -31,7 +31,38 @@ class Corso
         return count($this->studenti);
     }
     
-   
+   //funzione della media
+     function media($voti)
+        {
+        $sommaTot=0;
+        foreach($voti as $voto)
+            {
+                $sommaTot += $voto;
+            }
+            $media = $sommaTot/count($voti);
+            return $media;
+        }
+
+    function migliorStudente()
+    {
+        $migliore = null;
+        $media=0;
+        foreach($this->studenti as $studente)
+            {
+                $media_temp = $this->media($studente->getVoti());
+                if($migliore == null)
+                    {
+                        $migliore = $studente;
+                        $media = $media_temp;
+                    }
+                else if($media_temp > $media)
+                    {
+                        $migliore = $studente;
+                        $media = $media_temp;
+                    }
+            }
+            return "Il migliore è ". $migliore->getNome()." ". $migliore->getCognome()." con media $media";
+    }
 }
 
 ?>

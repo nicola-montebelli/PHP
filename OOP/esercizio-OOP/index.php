@@ -26,6 +26,13 @@ echo "<br>";
     $php ->docente = $docente1;     //assegniamo docente di classe Persona al parametro docente della classe Corso
     $php ->studenti=[$studente1,$studente2];
     echo $php->stampaDati();
+    echo "<br>";
+    echo $php->migliorStudente();
+    echo "<hr>";
+    foreach($php->studenti as $studente)
+        {
+            print("Lo studente ". $studente->getNome()." ". $studente->getCognome()." ha media ".$php->media($studente->getVoti())."<br>");
+        }
     
     //confrontare questo file con quello della prof su classroom
     //trovare il perchè il debug non funziona 
