@@ -56,6 +56,17 @@ class Persona
     {
         return $this->ruolo;
     }
+
+    //funzione della media
+     function media()
+    {
+        $sommaTot=0;
+        foreach($this->voti as $voto)
+            {
+                $sommTot += $voto;
+            }
+            $media = $sommaTot/count($this->voti);
+    }
 }
 
 

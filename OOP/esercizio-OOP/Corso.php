@@ -31,10 +31,7 @@ class Corso
         return count($this->studenti);
     }
     
-    function media()
-    {
-
-    }
+   
 }
 
 ?>
