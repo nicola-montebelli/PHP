@@ -31,7 +31,7 @@ class Corso
         return count($this->studenti);
     }
     
-   //funzione della media
+//funzione della media
      function media($voti)
         {
         $sommaTot=0;
@@ -42,7 +42,7 @@ class Corso
             $media = $sommaTot/count($voti);
             return $media;
         }
-
+//funzione che trova il miglior studente con la media più alta
     function migliorStudente()
     {
         $migliore = null;

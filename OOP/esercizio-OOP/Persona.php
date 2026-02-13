@@ -45,7 +45,7 @@ class Persona
     { 
         $this->cognome =ucfirst($cognome);
     }
-
+//GET per i voti dello studente
     function getVoti()
     {
         return $this->voti;
