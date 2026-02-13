@@ -24,7 +24,7 @@ include_once("Corso.php");
 echo "<br>";
     $php = new Corso("PHP",date("Y"));
     $php ->docente = $docente1;     //assegniamo docente di classe Persona al parametro docente della classe Corso
-    $php ->studenti=[$studente1,$studente2];
+    $php ->studenti=[$studente1,$studente2]; //assegniamo al parametro studenti dell'istanza $php un array di studenti 
     echo $php->stampaDati();
     echo "<br>";
     echo $php->migliorStudente();
