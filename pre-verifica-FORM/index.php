@@ -68,6 +68,44 @@ echo "<a href='inserimento.php'>Inserisci Utente</a><br>";
             </tr>";
         }
     echo "</table>";
+     echo "<hr>";
+    echo "Di chi è il compleanno tra un mese?<br>";
+try
+    {
+        //1 connessione
+        $connessione = new PDO($dsn,$user,$pass);
+
+        //2 preparazione dello statement (query sql)
+        $sql = "SELECT * FROM utenti 
+                WHERE MONTH(ut_data) = MONTH(DATE_ADD(CURDATE(), INTERVAL 1 MONTH))
+                AND DAY(ut_data) = DAY(DATE_ADD(CURDATE(), INTERVAL 1 MONTH))";
+        $statement = $connessione->prepare($sql);
+
+        //3 bind (specificata nella pagina dettaglio.php)
+
+        //4 esecuzione di una query
+        $statement->execute();
+
+        //5 restituzione dei dati
+        $compleanni = $statement->fetchAll(PDO::FETCH_ASSOC);
+    }
+    catch(PDOException $e)
+    {
+        echo "Errore di Connessione: " . $e->getMessage() . "<br>";
+        $compleanni =[];
+    }
+    
+    //print_r($compleanni);
+     if($compleanni)
+        {
+            foreach($compleanni as $compleanno)
+                {
+                    echo "{$compleanno['ut_nome']}
+                        {$compleanno['ut_cognome']} ";
+                     echo (new DateTime($compleanno['ut_data']))->format('d-m-Y').", ";
+                }
+                
+        }
 ?>
 </body>
 </html>

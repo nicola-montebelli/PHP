@@ -21,7 +21,8 @@ try
             {
                 echo "Errore dell'esecuzione della query";
             }
-         header("Location: http://localhost/ifts25/PHP/pre-verifica-FORM/"); 
+         header("Location: http://localhost/PHP/pre-verifica-FORM/"); 
+                                        //AGGIUNGERE /IFTS25/ A SCUOLA
          exit();
     }
     catch(PDOException $e)
