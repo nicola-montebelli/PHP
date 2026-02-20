@@ -35,7 +35,7 @@ include_once("include/config.php");
     catch(PDOException $e)
     {
         echo "Errore di Connessione: " . $e->getMessage() . "<br>";
-        $recordo =[];
+        $record =[];
     }
     if(!$record)
         {

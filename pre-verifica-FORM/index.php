@@ -10,7 +10,7 @@ include_once("include/config.php");
 </head>
 <body>
     <!-- 4 , 5 , 6 -->
-    <form action="" method="GETs" id="redirect">
+    <form action="" method="GET" id="redirect"> <!-- action="" riferisce SE STESSA-->
         Nome: <input type="text" name="nome">
         <input type="submit" value="Cerca">
     </form>
@@ -26,9 +26,9 @@ echo "<a href='inserimento.php'>Inserisci Utente</a><br>";
         $nome="%";
         if(array_key_exists('nome',$_REQUEST))
             {
-                $nome = "%{$_REQUEST['nome']}%";
+                $nome = "%{$_REQUEST['nome']}%";   
             }
-        $sql = "SELECT * FROM utenti 
+        $sql = "SELECT * FROM utenti        /*trova i nomi e cognomi che contengono le lettere che vengono scritte nella textbox*/
                 WHERE ut_nome LIKE :nome
                 OR ut_cognome LIKE :nome
                 ORDER BY ut_cognome";
@@ -101,10 +101,9 @@ try
             foreach($compleanni as $compleanno)
                 {
                     echo "{$compleanno['ut_nome']}
-                        {$compleanno['ut_cognome']} ";
-                     echo (new DateTime($compleanno['ut_data']))->format('d-m-Y').", ";
+                          {$compleanno['ut_cognome']} ";
+                    echo (new DateTime($compleanno['ut_data']))->format('d-m-Y').", ";
                 }
-                
         }
 ?>
 </body>

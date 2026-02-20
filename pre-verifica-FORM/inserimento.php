@@ -45,7 +45,7 @@ if($_POST)
         else
             {
                 echo "Utente inserito correttamente";
-                header("Location: http://localhost/PHP/pre-verifica-FORM/"); //funzione che redirecta a una pagina definita 
+                header("Location: http://localhost/ifts25/PHP/pre-verifica-FORM/"); //funzione che redirecta a una pagina definita 
                 exit();                         //AGGIUNGERE /IFTS25/ A SCUOLA
                 //andare a una pagina specifica (index.php)
             }
