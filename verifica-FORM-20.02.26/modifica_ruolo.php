@@ -8,7 +8,7 @@ try
         $ruolo = $_REQUEST['ruolo'];
         //2 preparazione dello statement (query sql)
         $sql = "UPDATE utenti SET ute_ruolo = :ruolo 
-                WHERE ute_id != :id";
+                WHERE ute_id = :id";
         $statement = $connessione->prepare($sql);
 
         //3 bind (specificata nella pagina dettaglio.php)
