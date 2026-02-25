@@ -7,7 +7,7 @@ try
         $id = $_REQUEST['id'];
         $ruolo = $_REQUEST['ruolo'];
         //2 preparazione dello statement (query sql)
-        $sql = "UPDATE utenti SET ute_ruolo = :ruolo 
+        $sql = "UPDATE utenti SET ute_ruolo = :ruolo  /*fare il controllo che se il form è vuoto e viene premuto il tasto cerca di default verrà impostato utente*/
                 WHERE ute_id = :id";
         $statement = $connessione->prepare($sql);
 
