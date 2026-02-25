@@ -1,7 +1,7 @@
 <?php 
 setcookie('miocookie',1,time()+60);  //Expire  default : session   time()+60  1 minuto dalla creazione
 setcookie('secondocookie',2,time()+3600); //un'ora
-setcookie('lingua','IT',time()+(3600*24));
+setcookie('lingua','it',time()+(3600*24));
 
 setcookie('nuovocookie','new');     //cosa succede se setto un nuovo cookie dopo che $_COOKIE ha già dei cookie settati?
 //(LATO SERVER)la prima volta che viene eseguita verrà inserita nell'elenco dei cookie ma printr($_COOKIE) ritornerà array vuoto(o i valori dei cookie già esistenti)

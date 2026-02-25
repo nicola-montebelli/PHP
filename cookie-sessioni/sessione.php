@@ -1,7 +1,7 @@
 <?php 
 //apertura della sessione
 session_start();
-$_SESSION['lingua'] = 'EN';
+$_SESSION['lingua'] = 'en';
 print_r($_SESSION);
 ?>
 
