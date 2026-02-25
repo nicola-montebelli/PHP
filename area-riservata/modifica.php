@@ -1,4 +1,7 @@
 <?php
+session_start();
+include_once("utilità.php");
+Utilita::autenticato();
 include_once("inc/config.php");
 
 
