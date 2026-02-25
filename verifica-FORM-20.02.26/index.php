@@ -49,37 +49,45 @@ if($_GET)
             }
 
             echo "<br>";
-                echo "<b>Utenti trovati che sono nati dopo il ".(new DateTime($data_inserita))->format('d-m-Y')."</b><br>";
-                if(! $records)
-                    {
-                        echo "Nessun utente trovato.";
-                    }
-                else 
-                    {
-                        foreach($records as $record)
-                            {
-                                echo "'$record[ute_nome] ";
-                                echo "$record[ute_cognome]' ";          //2
-                                echo "'$record[ute_ruolo]' ";
-                                if($record['ute_ruolo'] != $ruolo_inserito)
-                                    {
-                                        echo "<a href='modifica_ruolo.php?id=$record[ute_id]&ruolo=$ruolo_inserito'> Cambia Ruolo</a> ";
-                                    }
-                                echo (new DateTime($record['ute_natoil']))->format('d-m-Y')." ";
-                                if(compleanno($record['ute_natoil']))
-                                    {
-                                        echo "Auguri!!!";
-                                    }else echo "Non è ancora il tuo compleanno";
-                                echo "<br>";
-                            }
-                    }
+            if(!$data_inserita )
+                {
+                    echo "Non è stata inserita una data";
+                }
+                else
+                {
+                    echo "<b>Utenti trovati che sono nati dopo il ".(new DateTime($data_inserita))->format('d-m-Y')."</b><br>";
+                    if(! $records)
+                        {
+                            echo "Non son stati trovati utenti";
+                        }
+                    else 
+                        {
+                            foreach($records as $record)
+                                {
+                                    echo "'$record[ute_nome] ";
+                                    echo "$record[ute_cognome]' ";          //2
+                                    echo "'$record[ute_ruolo]' ";
+                                    if($record['ute_ruolo'] != $ruolo_inserito)
+                                        {
+                                            echo "<a href='modifica_ruolo.php?id=$record[ute_id]&ruolo=$ruolo_inserito'> Cambia Ruolo</a> ";
+                                        }
+                                    echo (new DateTime($record['ute_natoil']))->format('d-m-Y')." ";
+                                    if(compleanno($record['ute_natoil']))
+                                        {
+                                            echo "Auguri!!!";
+                                        }else echo "Non è ancora il tuo compleanno";
+                                    echo "<br>";
+                                }
+                        }
+                }
     }
 ?>
 
 <?php 
-function compleanno($data_compleanno)       //3
+function compleanno($data)       //3
 {
-    if($data_compleanno == date("m-d"))
+    $data_compleanno = substr($data,5);
+    if($data_compleanno== date("m-d"))
         {
             return true;
         }

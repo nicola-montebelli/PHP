@@ -20,10 +20,14 @@ try
             {
                 echo "Errore dell'esecuzione della query";
             }
+        else
+            {
+                echo"Modifica avvenuta con successo";
+            }
 
         //echo "<a href='index.php'</a>";
-         header("Location: http://localhost/ifts25/PHP/verifica-FORM-20.02.26/index.php");  //attenzione al path                          
-         exit();
+         //header("Location: http://localhost/PHP/verifica-FORM-20.02.26/index.php");  //attenzione al path                          
+         //exit();
     }
     catch(PDOException $e)
     {
