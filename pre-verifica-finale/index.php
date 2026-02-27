@@ -15,7 +15,7 @@ $n_select = isset($_SESSION['n_select']) ? $_SESSION['n_select'] : 0;
         echo "Il servizio di ricerca è stato utilizzato $n_select volte<br>";
         echo "Puoi farlo per altre ".(MAXSELECT - $n_select)." volte<br>";
     ?>
-    <form action="azione.php" method="GET">
+    <form action="azione.php" method="POST" enctype="multipart/form-data">  <!-- per l'upload dei file !-->
         <input type="text" name="mail" placeholder="mail" required>
         <input type="submit" value="Cerca"><br>
         <input type="file" name="img" id="">

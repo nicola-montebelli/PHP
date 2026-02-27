@@ -12,6 +12,14 @@ include_once("config/config.php");
 </head>
 <body>
     <?php 
+    print_r($_FILES);   //array bidimensionale
+    if(isset($FILES['img']))
+        {
+            //gestisco l'upload del file img
+            move_uploaded_file($FILES['tmp_name'],'immagini/'.$_FILES['name']);
+        }
+
+
     if(!isset($_REQUEST['mail']))
         {
             echo "Devi inserire una mail";
