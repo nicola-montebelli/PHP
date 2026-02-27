@@ -34,8 +34,6 @@ if($_POST)
     {
         echo "Utente o password non corretti. Riprovare<br>";
     }
-
-
 }
 ?>
 </body>
